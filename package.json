@@ -33,6 +33,7 @@
   "dependencies": {
     "@slack/bolt": "^3.13.1",
     "dotenv": "^16.0.3",
-    "redis": "^4.6.6"
+    "redis": "^4.6.6",
+    "xlsx": "^0.18.5"
   }
 }
