@@ -28,6 +28,7 @@ export async function setValue(key: string, value: string) {
     return;
   }
   await client.set(key, value);
+  await client.bgSave();
 }
 
 export async function getValue(key: string): Promise<any> {
