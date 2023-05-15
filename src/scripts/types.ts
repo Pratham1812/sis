@@ -3,7 +3,7 @@ import { StringIndexed } from '@slack/bolt/dist/types/helpers';
 import { SlackEventMiddlewareArgs } from '@slack/bolt';
 interface app extends App<StringIndexed>{}
 
-// interface middleware extends SlackEventMiddlewareArgs<'message'>{}
+interface middleware extends SlackEventMiddlewareArgs<'message'>{}
 
 interface info
     {
@@ -20,7 +20,7 @@ interface info
       }
 
 
-// export {middleware}
+export {middleware}
 
 export {info};
 
