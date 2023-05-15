@@ -1,21 +1,12 @@
 import {readFile, utils} from 'xlsx';
+import { app,info} from '../types';
+
 const workbook = readFile('./src/utils/info.xlsx');
 const sheetName: string = workbook.SheetNames[0];
 const sheet: object = workbook.Sheets[sheetName];
-const json: {
-  Name: string;
-  'Phone No': number;
-  'Email Id': string;
-  'DOB(dd/mm/yyyy)': number;
-  Year: string;
-  Branch: string;
-  'Enrollment Number': number;
-  'Room No': string;
-  'GITHUB ID': string;
-  'SLACK USER ID': string;
-}[] = utils.sheet_to_json(sheet);
+const json: info[] = utils.sheet_to_json(sheet);
 
-export function info_register(app: any) {
+export function info_register(app: app) {
   app.message('sis info ', async (obj: {message: any; say: any}) => {
     const name: string = obj.message.text.split(' ')[2];
     const search: any = new RegExp(name, 'i');

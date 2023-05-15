@@ -1,7 +1,9 @@
 // import { redisInit,redisClose,getValue,setValue } from "../services/redis"
 import {getValue, setValue} from '../../services/redis';
+import { app} from '../types';
 
-export function score_register(app: any) {
+
+export function score_register(app: app) {
   app.message('sis help ', async (obj: {message: any; say: any}) => {
     await obj.say(
       'Available commands\n1: sis score <batch name (f22,f21)> \n2: sis info <name of user>\n3: sis <name> is/is not <role>\n4: sis bkc mem'
