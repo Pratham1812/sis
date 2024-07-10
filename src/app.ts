@@ -4,8 +4,11 @@ dotenv.config();
 import {App} from '@slack/bolt';
 import {redisInit} from './services/redis';
 import {registerListeners} from './scripts/router';
+import { app } from './scripts/types';
 
-const app = new App({
+
+
+const app:app = new App({
   token: process.env.SLACK_BOT_TOKEN,
   signingSecret: process.env.SLACK_SIGNING_SECRET,
   socketMode: true, // add this
